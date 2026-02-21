@@ -1,0 +1,4 @@
+generate-themes.js
+themes/image.png
+.vscodeignore
+*.vsix

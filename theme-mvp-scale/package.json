@@ -1,0 +1,75 @@
+{
+  "name": "mvp-scale-themes",
+  "displayName": "MVP Scale - Startup & Vibe Coding Themes",
+  "description": "10 dark themes inspired by the startup founder journey. From Seed Round to Exit Strategy.",
+  "version": "1.0.0",
+  "publisher": "mvp-scale",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "dark theme",
+    "startup",
+    "vibe coding",
+    "founder",
+    "mvp",
+    "deploy"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "MVP Scale: Founder Mode",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-founder-mode-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Ship It",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-ship-it-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Seed Round",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-seed-round-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Series A",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-series-a-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Ramen Profitable",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-ramen-profitable-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Pivot",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-pivot-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Unicorn",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-unicorn-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Demo Day",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-demo-day-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Late Night Deploy",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-late-night-deploy-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Exit Strategy",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-exit-strategy-color-theme.json"
+      }
+    ]
+  }
+}
