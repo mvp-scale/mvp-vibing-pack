@@ -1,8 +1,8 @@
 {
   "name": "mvp-scale-themes",
   "displayName": "MVP Scale - Startup & Vibe Coding Themes",
-  "description": "10 dark themes inspired by the startup founder journey. From Seed Round to Exit Strategy.",
-  "version": "1.0.0",
+  "description": "10 dark themes that follow the startup founder journey — from Seed Round to Exit Strategy. Pitch-black terminals, theme-aware Mermaid diagrams, and vibes that scale.",
+  "version": "1.1.0",
   "publisher": "mvp-scale",
   "engines": {
     "vscode": "^1.70.0"
@@ -16,29 +16,22 @@
     "vibe coding",
     "founder",
     "mvp",
-    "deploy"
+    "deploy",
+    "mermaid",
+    "markdown",
+    "cursor"
   ],
   "contributes": {
     "themes": [
-      {
-        "label": "MVP Scale: Founder Mode",
-        "uiTheme": "vs-dark",
-        "path": "./themes/mvp-scale-founder-mode-color-theme.json"
-      },
-      {
-        "label": "MVP Scale: Ship It",
-        "uiTheme": "vs-dark",
-        "path": "./themes/mvp-scale-ship-it-color-theme.json"
-      },
       {
         "label": "MVP Scale: Seed Round",
         "uiTheme": "vs-dark",
         "path": "./themes/mvp-scale-seed-round-color-theme.json"
       },
       {
-        "label": "MVP Scale: Series A",
+        "label": "MVP Scale: Founder Mode",
         "uiTheme": "vs-dark",
-        "path": "./themes/mvp-scale-series-a-color-theme.json"
+        "path": "./themes/mvp-scale-founder-mode-color-theme.json"
       },
       {
         "label": "MVP Scale: Ramen Profitable",
@@ -46,14 +39,14 @@
         "path": "./themes/mvp-scale-ramen-profitable-color-theme.json"
       },
       {
+        "label": "MVP Scale: Ship It",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-ship-it-color-theme.json"
+      },
+      {
         "label": "MVP Scale: Pivot",
         "uiTheme": "vs-dark",
         "path": "./themes/mvp-scale-pivot-color-theme.json"
-      },
-      {
-        "label": "MVP Scale: Unicorn",
-        "uiTheme": "vs-dark",
-        "path": "./themes/mvp-scale-unicorn-color-theme.json"
       },
       {
         "label": "MVP Scale: Demo Day",
@@ -61,9 +54,19 @@
         "path": "./themes/mvp-scale-demo-day-color-theme.json"
       },
       {
+        "label": "MVP Scale: Series A",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-series-a-color-theme.json"
+      },
+      {
         "label": "MVP Scale: Late Night Deploy",
         "uiTheme": "vs-dark",
         "path": "./themes/mvp-scale-late-night-deploy-color-theme.json"
+      },
+      {
+        "label": "MVP Scale: Unicorn",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mvp-scale-unicorn-color-theme.json"
       },
       {
         "label": "MVP Scale: Exit Strategy",

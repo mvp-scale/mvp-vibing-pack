@@ -1,0 +1,670 @@
+/* ============================================
+   MPE Theme-Aware Styles
+   ============================================
+   Primary: maps to --vscode-* variables (adapts per VS Code theme)
+   Fallback dark: ColorHunt All-Time #1 (#222831 #393E46 #00ADB5 #EEEEEE)
+   Fallback light: ColorHunt Monthly #1 (#355872 #7AAACE #9CD5FF #F7F8F0)
+   ============================================ */
+
+/* --- Dark mode variables --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mpe-bg: var(--vscode-editor-background, #222831);
+    --mpe-bg-secondary: var(--vscode-sideBar-background, #393E46);
+    --mpe-bg-deep: var(--vscode-activityBar-background, #1B262C);
+    --mpe-text: var(--vscode-editor-foreground, #EEEEEE);
+    --mpe-text-muted: var(--vscode-descriptionForeground, #9DB2BF);
+    --mpe-accent: var(--vscode-button-background, #00ADB5);
+    --mpe-accent-text: var(--vscode-button-foreground, #EEEEEE);
+    --mpe-border: var(--vscode-panel-border, #393E46);
+    --mpe-node-fill: var(--vscode-sideBar-background, #393E46);
+    --mpe-node-stroke: var(--vscode-button-background, #00ADB5);
+    --mpe-node-text: var(--vscode-editor-foreground, #EEEEEE);
+    --mpe-cluster-fill: var(--vscode-activityBar-background, #1B262C);
+    --mpe-cluster-stroke: var(--vscode-button-background, #00ADB5);
+    --mpe-line: var(--vscode-foreground, #9DB2BF);
+    --mpe-label-bg: var(--vscode-editor-background, #222831);
+  }
+}
+
+/* --- Light mode variables --- */
+@media (prefers-color-scheme: light) {
+  :root {
+    --mpe-bg: var(--vscode-editor-background, #F7F8F0);
+    --mpe-bg-secondary: var(--vscode-sideBar-background, #9CD5FF);
+    --mpe-bg-deep: var(--vscode-activityBar-background, #7AAACE);
+    --mpe-text: var(--vscode-editor-foreground, #355872);
+    --mpe-text-muted: var(--vscode-descriptionForeground, #526D82);
+    --mpe-accent: var(--vscode-button-background, #355872);
+    --mpe-accent-text: var(--vscode-button-foreground, #F7F8F0);
+    --mpe-border: var(--vscode-panel-border, #7AAACE);
+    --mpe-node-fill: var(--vscode-sideBar-background, #9CD5FF);
+    --mpe-node-stroke: var(--vscode-button-background, #7AAACE);
+    --mpe-node-text: var(--vscode-editor-foreground, #355872);
+    --mpe-cluster-fill: var(--vscode-activityBar-background, #F7F8F0);
+    --mpe-cluster-stroke: var(--vscode-button-background, #355872);
+    --mpe-line: var(--vscode-foreground, #355872);
+    --mpe-label-bg: var(--vscode-editor-background, #F7F8F0);
+  }
+}
+
+/* ============================================
+   MERMAID DIAGRAM STYLES
+   All rules reference --mpe-* variables only.
+   No hardcoded colors below this line.
+   ============================================ */
+
+/* --- Lines, edges, arrows --- */
+.mermaid path,
+.mermaid line,
+.mermaid .edgePath path,
+.mermaid .flowchart-link,
+.mermaid .relation,
+.mermaid .transition,
+.mermaid .actor-line,
+.mermaid .messageLine0,
+.mermaid .messageLine1,
+.mermaid .relationshipLine {
+  stroke: var(--mpe-line) !important;
+  stroke-width: 2px !important;
+}
+
+/* --- Arrowheads --- */
+.mermaid marker path,
+.mermaid #arrowhead path,
+.mermaid .arrowheadPath,
+.mermaid defs marker path {
+  fill: var(--mpe-line) !important;
+}
+
+/* --- All text (base rule for all diagrams) --- */
+.mermaid text,
+.mermaid tspan,
+.mermaid .label,
+.mermaid .nodeLabel,
+.mermaid .edgeLabel,
+.mermaid .cluster-label,
+.mermaid .messageText,
+.mermaid .labelText,
+.mermaid .loopText,
+.mermaid .noteText,
+.mermaid .entityLabel,
+.mermaid .relationshipLabel,
+.mermaid .taskText,
+.mermaid .sectionTitle,
+.mermaid .titleText {
+  fill: var(--mpe-text) !important;
+  color: var(--mpe-text) !important;
+  font-size: 13px !important;
+}
+
+/* --- Nodes (flowchart, sequence, etc.) --- */
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node path,
+.mermaid .actor,
+.mermaid .entityBox {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .node .label foreignObject div {
+  color: var(--mpe-node-text) !important;
+}
+
+/* --- Subgraphs / clusters --- */
+.mermaid .cluster rect {
+  fill: var(--mpe-cluster-fill) !important;
+  stroke: var(--mpe-cluster-stroke) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .cluster-label .nodeLabel {
+  color: var(--mpe-cluster-stroke) !important;
+  fill: var(--mpe-cluster-stroke) !important;
+  font-weight: bold !important;
+}
+
+/* --- Edge labels --- */
+.mermaid .edgeLabel {
+  background-color: var(--mpe-label-bg) !important;
+}
+
+.mermaid .edgeLabel span,
+.mermaid .edgeLabel p {
+  color: var(--mpe-text) !important;
+  background: var(--mpe-label-bg) !important;
+  padding: 2px 4px !important;
+}
+
+/* --- Sequence diagram --- */
+.mermaid .actor-line {
+  stroke-dasharray: 4, 4 !important;
+}
+
+.mermaid .labelBox {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .loopLine {
+  stroke: var(--mpe-border) !important;
+  stroke-dasharray: 4, 4 !important;
+}
+
+.mermaid .note {
+  fill: var(--mpe-bg-secondary) !important;
+  stroke: var(--mpe-border) !important;
+}
+
+/* --- Class diagram --- */
+.mermaid .classGroup rect {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .classGroup text {
+  fill: var(--mpe-text) !important;
+  stroke: none !important;
+}
+
+.mermaid .classGroup line {
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .classLabel .box {
+  fill: var(--mpe-node-fill) !important;
+  stroke: none !important;
+  opacity: 0.5 !important;
+}
+
+.mermaid .classLabel .label {
+  fill: var(--mpe-accent) !important;
+}
+
+.mermaid .relation {
+  stroke: var(--mpe-accent) !important;
+  fill: none !important;
+}
+
+#compositionStart, #compositionEnd,
+#dependencyStart, #dependencyEnd,
+#extensionStart, #extensionEnd {
+  fill: var(--mpe-accent) !important;
+  stroke: var(--mpe-accent) !important;
+}
+
+#aggregationStart, #aggregationEnd {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-accent) !important;
+}
+
+/* --- State diagram --- */
+.mermaid g.stateGroup text {
+  fill: var(--mpe-accent) !important;
+  stroke: none !important;
+}
+
+.mermaid g.stateGroup rect {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-fill) !important;
+}
+
+.mermaid g.stateGroup .state-title {
+  fill: var(--mpe-text) !important;
+  font-weight: bold !important;
+}
+
+.mermaid g.stateGroup line,
+.mermaid .transition {
+  stroke: var(--mpe-accent) !important;
+}
+
+.mermaid .stateGroup .composit {
+  fill: var(--mpe-bg-secondary) !important;
+}
+
+.mermaid .state-note {
+  fill: var(--mpe-bg-secondary) !important;
+  stroke: var(--mpe-border) !important;
+}
+
+.mermaid .node circle.state-start,
+.mermaid .node circle.state-end {
+  fill: var(--mpe-text-muted) !important;
+  stroke: var(--mpe-text-muted) !important;
+}
+
+.mermaid .statediagram-cluster rect {
+  fill: var(--mpe-node-fill) !important;
+}
+
+.mermaid .statediagram-state .divider {
+  stroke: var(--mpe-accent) !important;
+}
+
+#statediagram-barbEnd {
+  fill: var(--mpe-accent) !important;
+}
+
+/* --- ER diagram --- */
+.mermaid .attributeBoxEven,
+.mermaid .attributeBoxOdd {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+/* ============================================
+   GANTT CHART
+   Done tasks use border color (not bg-secondary)
+   so they don't blend into section backgrounds.
+   All text forced light via broad SVG selectors.
+   ============================================ */
+.mermaid .section0, .mermaid .section2 {
+  fill: var(--mpe-bg-secondary) !important;
+}
+
+.mermaid .section1, .mermaid .section3 {
+  fill: var(--mpe-cluster-fill) !important;
+}
+
+.mermaid .task {
+  fill: var(--mpe-accent) !important;
+  stroke: var(--mpe-border) !important;
+}
+
+.mermaid .task0, .mermaid .task1,
+.mermaid .task2, .mermaid .task3 {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .active0, .mermaid .active1,
+.mermaid .active2, .mermaid .active3 {
+  fill: var(--mpe-accent) !important;
+  stroke: var(--mpe-border) !important;
+}
+
+/* Done tasks - use border color so they contrast with section bg */
+.mermaid .done0, .mermaid .done1,
+.mermaid .done2, .mermaid .done3 {
+  fill: var(--mpe-border) !important;
+  stroke: var(--mpe-text-muted) !important;
+}
+
+/* Gantt text - broad SVG text override to catch all variants
+   including section titles that may not have specific classes */
+.mermaid .taskText,
+.mermaid .taskTextOutsideRight,
+.mermaid .taskTextOutsideLeft,
+.mermaid .taskText0, .mermaid .taskText1,
+.mermaid .taskText2, .mermaid .taskText3,
+.mermaid .activeText0, .mermaid .activeText1,
+.mermaid .activeText2, .mermaid .activeText3,
+.mermaid .doneText0, .mermaid .doneText1,
+.mermaid .doneText2, .mermaid .doneText3 {
+  fill: var(--mpe-text) !important;
+  color: var(--mpe-text) !important;
+  font-size: 12px !important;
+}
+
+/* Section titles - multiple selector strategies */
+.mermaid .sectionTitle,
+.mermaid .sectionTitle0, .mermaid .sectionTitle1,
+.mermaid .sectionTitle2, .mermaid .sectionTitle3,
+.mermaid .section-title,
+.mermaid .section-title-0, .mermaid .section-title-1,
+.mermaid .section-title-2, .mermaid .section-title-3,
+.mermaid text.sectionTitle,
+.mermaid text[class*="sectionTitle"],
+.mermaid text[class*="section-title"] {
+  fill: var(--mpe-text) !important;
+  color: var(--mpe-text) !important;
+  font-weight: bold !important;
+}
+
+/* Nuclear option: all text inside a gantt SVG */
+.mermaid[data-processed="true"] text {
+  fill: var(--mpe-text) !important;
+}
+
+.mermaid .today {
+  fill: none !important;
+  stroke: var(--mpe-accent) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .milestone {
+  fill: var(--mpe-accent) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+/* Gantt grid */
+.mermaid .grid .tick line {
+  stroke: var(--mpe-border) !important;
+  opacity: 0.5 !important;
+}
+
+.mermaid .grid .tick text {
+  fill: var(--mpe-text-muted) !important;
+}
+
+/* ============================================
+   USER JOURNEY
+   Override Mermaid's light pastel section
+   backgrounds with dark fills.
+   ============================================ */
+.mermaid .journey-section {
+  fill: var(--mpe-bg-secondary) !important;
+}
+
+.mermaid .section-title,
+.mermaid text.section-title {
+  fill: var(--mpe-text) !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+}
+
+/* Journey section backgrounds */
+.mermaid rect.section,
+.mermaid .section-0, .mermaid .section-1,
+.mermaid .section-2, .mermaid .section-3 {
+  fill: var(--mpe-bg-secondary) !important;
+  stroke: var(--mpe-border) !important;
+}
+
+/* Journey task bars */
+.mermaid rect.task,
+.mermaid .task-type-0, .mermaid .task-type-1,
+.mermaid .task-type-2, .mermaid .task-type-3,
+.mermaid .task-type-4 {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+/* ============================================
+   GIT GRAPH
+   Clean commits, no heavy background fills.
+   ============================================ */
+.mermaid .commit {
+  stroke: var(--mpe-line) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .commit-id,
+.mermaid .commit-msg,
+.mermaid .branch-label {
+  fill: var(--mpe-text-muted) !important;
+  color: var(--mpe-text-muted) !important;
+}
+
+/* Tag labels */
+.mermaid .tag-label {
+  fill: var(--mpe-text) !important;
+}
+
+.mermaid .tag-label-bkg {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .commit-highlight {
+  fill: var(--mpe-bg-secondary) !important;
+}
+
+/* ============================================
+   TIMELINE
+   Dark section fills with readable text.
+   ============================================ */
+.mermaid .timeline-section,
+.mermaid .timeline-section-0, .mermaid .timeline-section-2 {
+  fill: var(--mpe-bg-secondary) !important;
+}
+
+.mermaid .timeline-section-1, .mermaid .timeline-section-3 {
+  fill: var(--mpe-cluster-fill) !important;
+}
+
+.mermaid .timeline-text,
+.mermaid .timeline-section-title {
+  fill: var(--mpe-text) !important;
+  font-size: 13px !important;
+}
+
+/* Timeline event boxes */
+.mermaid .timeline-period rect,
+.mermaid .timeline-event rect {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .timeline-line {
+  stroke: var(--mpe-line) !important;
+}
+
+/* ============================================
+   QUADRANT CHART
+   Dark quadrant fills with visible labels
+   and data points.
+   ============================================ */
+.mermaid .quadrant-0, .mermaid .quadrant-2 {
+  fill: var(--mpe-bg-secondary) !important;
+}
+
+.mermaid .quadrant-1, .mermaid .quadrant-3 {
+  fill: var(--mpe-cluster-fill) !important;
+}
+
+.mermaid .quadrant-label {
+  fill: var(--mpe-text) !important;
+  font-weight: bold !important;
+}
+
+.mermaid .quadrant-x-axis-label,
+.mermaid .quadrant-y-axis-label {
+  fill: var(--mpe-text-muted) !important;
+}
+
+.mermaid .quadrant-x-axis,
+.mermaid .quadrant-y-axis {
+  stroke: var(--mpe-border) !important;
+}
+
+.mermaid .quadrant-point {
+  fill: var(--mpe-accent) !important;
+}
+
+.mermaid .quadrant-point-text {
+  fill: var(--mpe-text) !important;
+}
+
+/* ============================================
+   XY CHART (Bar and Line)
+   Dark plot area, accent-colored bars/lines,
+   readable axis labels.
+   ============================================ */
+.mermaid .xychart-plot-area {
+  fill: var(--mpe-bg) !important;
+}
+
+.mermaid .xychart-bar {
+  fill: var(--mpe-accent) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .xychart-line {
+  stroke: var(--mpe-accent) !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .xychart-x-axis-label,
+.mermaid .xychart-y-axis-label {
+  fill: var(--mpe-text) !important;
+}
+
+.mermaid .xychart-x-axis .tick text,
+.mermaid .xychart-y-axis .tick text {
+  fill: var(--mpe-text-muted) !important;
+}
+
+.mermaid .xychart-x-axis .tick line,
+.mermaid .xychart-y-axis .tick line,
+.mermaid .xychart-x-axis .domain,
+.mermaid .xychart-y-axis .domain {
+  stroke: var(--mpe-border) !important;
+}
+
+.mermaid .xychart-grid line {
+  stroke: var(--mpe-border) !important;
+  opacity: 0.3 !important;
+}
+
+.mermaid .xychart-title {
+  fill: var(--mpe-text) !important;
+  font-size: 16px !important;
+}
+
+/* ============================================
+   PIE CHART
+   ============================================ */
+.mermaid .pieTitleText {
+  fill: var(--mpe-text) !important;
+  font-size: 18px !important;
+}
+
+.mermaid .slice {
+  stroke: var(--mpe-bg) !important;
+  stroke-width: 1px !important;
+}
+
+.mermaid .legend text {
+  fill: var(--mpe-text) !important;
+}
+
+/* ============================================
+   PACKET DIAGRAM
+   Dark cells with visible borders and text.
+   ============================================ */
+.mermaid .packet-row rect,
+.mermaid .packet-cell rect {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .packet-row text,
+.mermaid .packet-cell text {
+  fill: var(--mpe-text) !important;
+}
+
+/* Catch-all for packet diagram elements */
+.mermaid [class*="packet"] rect {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid [class*="packet"] text {
+  fill: var(--mpe-text) !important;
+}
+
+/* ============================================
+   SANKEY DIAGRAM
+   ============================================ */
+.mermaid .sankey-node rect {
+  fill: var(--mpe-accent) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .sankey-node text {
+  fill: var(--mpe-text) !important;
+}
+
+.mermaid .sankey-link {
+  stroke: var(--mpe-line) !important;
+  opacity: 0.4 !important;
+}
+
+/* ============================================
+   BLOCK DIAGRAM
+   ============================================ */
+.mermaid .block rect,
+.mermaid .block polygon {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .block text {
+  fill: var(--mpe-text) !important;
+}
+
+/* ============================================
+   KANBAN
+   ============================================ */
+.mermaid .kanban-column rect {
+  fill: var(--mpe-bg-secondary) !important;
+  stroke: var(--mpe-border) !important;
+}
+
+.mermaid .kanban-item rect {
+  fill: var(--mpe-node-fill) !important;
+  stroke: var(--mpe-node-stroke) !important;
+}
+
+.mermaid .kanban-column text,
+.mermaid .kanban-item text {
+  fill: var(--mpe-text) !important;
+}
+
+/* ============================================
+   GLOBAL SVG CATCH-ALLS
+   Handle remaining unstyled elements in
+   newer/unknown Mermaid diagram types.
+   ============================================ */
+
+/* Top-level background rect */
+.mermaid svg > g > rect {
+  fill: var(--mpe-bg) !important;
+}
+
+/* Axis text across all chart types */
+.mermaid .axis text,
+.mermaid .tick text {
+  fill: var(--mpe-text-muted) !important;
+}
+
+.mermaid .axis line,
+.mermaid .axis path,
+.mermaid .tick line,
+.mermaid .domain {
+  stroke: var(--mpe-border) !important;
+}
+
+/* Grid lines across all chart types */
+.mermaid .grid line {
+  stroke: var(--mpe-border) !important;
+  opacity: 0.3 !important;
+}
+
+/* --- Markers --- */
+.mermaid .marker {
+  fill: var(--mpe-text-muted) !important;
+}
+
+.mermaid .marker.cross {
+  stroke: var(--mpe-text-muted) !important;
+}
+
+/* --- Edge patterns --- */
+.mermaid .edge-pattern-solid {
+  stroke-dasharray: 0 !important;
+}
+
+.mermaid .edge-pattern-dashed {
+  stroke-dasharray: 3 !important;
+}
+
+.mermaid .edge-pattern-dotted {
+  stroke-dasharray: 2 !important;
+}

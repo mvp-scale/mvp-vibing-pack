@@ -1,0 +1,1175 @@
+
+/*............ DANNY OBSIDIAN THEME ....................*/
+/*............ PREVIEW MODE ....................*/
+/*............ EDITOR MODE ....................*/
+/*............ WORKSPACE ....................*/
+
+:root
+{
+    --Orange: #ff8800;
+    --LightOrange: #ffc480;
+    --Blue: #0077ff;
+    --Black: #131515;
+    --DarkGrey:#373737;
+    --LightBlue: #9AC9FF;
+    --LighterBlue: #CDE4FF;
+    --white: #ffffff;
+    --LighterGrey: #f0f0f0;
+}
+.theme-light
+{
+    --interactive-accent:         var(--Orange); /*active pain color, moving pane color and menu button color in settings*/
+    --text-accent:                var(--Blue);
+    --text-accent-hover:          var(--Orange);
+    --interactive-accent-hover:   var(--Blue);
+    --text-highlight-bg:          var(--LightBlue);
+    --text-on-accent:             var(--white);
+}
+
+
+/*..........PREVIEW..........*/
+
+/*PAGE PREVIEW*/
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle
+{
+    width: 1px !important;
+    background-color: white;
+}
+
+/*TEXT PREVIEW*/
+html,body
+{ 
+    font-family: "Arial"; 
+}
+
+/*BOLD PREVIEW*/
+span.cm-strong, /*bold*/
+strong
+{
+    color: var(--Black);
+}
+/*ITALICS PREVIEW*/
+span.cm-em,
+em
+{
+    color: var(--Black);
+}
+
+/*HEADER 1 PREVIEW*/
+.cm-header-1,
+.markdown-preview-section h1
+{
+    font-weight: bold;
+    font-size: 35px !important;
+    color: var(--Orange) !important;
+    padding-bottom: 1px;
+    border-bottom: 3px solid;
+    text-align: center;
+}
+/*HEADER 2 PREVIEW*/
+.cm-header-2,
+.markdown-preview-view h2
+{
+    font-weight: bold;
+    font-size: 30px !important;
+    color: var(--Orange) !important;
+    padding-bottom: 0px;
+    border-bottom: 2px solid;
+}
+/*HEADER 3 PREVIEW*/
+.cm-header-3,
+.markdown-preview-section h3
+{
+    font-weight: 600 !important;
+    font-size: 25px !important;
+    color: var(--Orange) !important;
+    padding-bottom: 0px;
+    border-bottom: 2px solid;
+
+}
+/*HEADER 4 PREVIEW*/
+.cm-header-4,
+.markdown-preview-section h4
+{
+    font-weight: 550 !important;
+    font-size: 22px !important;
+    color: var(--Orange) !important;
+    padding-bottom: 0px;
+    border-bottom: 1px solid;
+}
+/*HEADER 5 PREVIEW*/
+.cm-header-5,
+.markdown-preview-section h5
+{
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    color: var(--Orange) !important;
+    padding-bottom: 0px;
+    border-bottom: 1px solid;
+}
+/*HEADER 6 PREVIEW*/
+.cm-header-6,
+.markdown-preview-section h6
+{
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  color: var(--Orange) !important;
+  padding-bottom: 0px;
+  border-bottom: 1px solid;
+}
+
+/*HEADING COLLAPSE ICON PREVIEW*/
+.markdown-preview-view div.is-collapsed h1::after,
+.markdown-preview-view div.is-collapsed h2::after,
+.markdown-preview-view div.is-collapsed h3::after, 
+.markdown-preview-view div.is-collapsed h4::after, 
+.markdown-preview-view div.is-collapsed h5::after, 
+.markdown-preview-view div.is-collapsed h6::after,
+.markdown-preview-view ol .is-collapsed::after, 
+.markdown-preview-view ul .is-collapsed::after {
+  content: "...";
+  padding: 5px;
+  color: var(--Blue);
+}
+
+/*HEADER 1 AND 2 ARROW LOCATION PREVIEW*/
+h1 div.heading-collapse-indicator.collapse-indicator,
+h2 div.heading-collapse-indicator.collapse-indicator {
+  position: absolute;
+  padding-left: 10px;
+  margin-top: 13px;
+  transition: transform 20ms linear 0s;
+}
+/*HEADER 1 AND 2 ARROW PREVIEW*/
+h1 div.heading-collapse-indicator.collapse-indicator::before,
+h2 div.heading-collapse-indicator.collapse-indicator::before {
+  content : "↓";
+  position: absolute;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Inter';
+  margin-left: -2px;
+  margin-top: -6px;
+  color: var(--text-accent);
+  transition: transform 10ms linear 0s;
+  opacity: 0;
+}
+/*HEADER TOGGLE HIDE PREVIEW*/
+.heading-collapse-indicator.collapse-indicator.collapse-icon svg 
+{
+  display: none;
+}
+/*HEADER 3,4,5,6 ARROW PREVIEW*/
+div.heading-collapse-indicator.collapse-indicator::before 
+{
+  content : "↓";
+  position: absolute;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Inter';
+  margin-left: -2px;
+  margin-top: 1px;
+  color: var(--text-accent);
+  transition: transform 10ms linear 0s;
+  opacity: 0;
+}
+/*HEADER 1 AND 2 COLLAPSE ARROW LOCATION PREVIEW*/
+div.is-collapsed h1 div.heading-collapse-indicator.collapse-indicator,
+div.is-collapsed h2 div.heading-collapse-indicator.collapse-indicator 
+{
+  transform: translateX(1px) translateY(18px) rotate(-90deg);
+  opacity: 0.5;
+}
+/*HEADER 3,4,5,6 COLLAPSE ARROW LOCATION PREVIEW*/
+div.is-collapsed div.heading-collapse-indicator.collapse-indicator 
+{
+  transform: translateX(-8px) translateY(20px) rotate(-90deg);
+  opacity: 0.5;
+}
+/*HEADER ARROW HOVER PREVIEW*/
+h1:hover div.heading-collapse-indicator.collapse-indicator::before,
+h2:hover div.heading-collapse-indicator.collapse-indicator::before,
+h3:hover div.heading-collapse-indicator.collapse-indicator::before,
+h4:hover div.heading-collapse-indicator.collapse-indicator::before,
+h5:hover div.heading-collapse-indicator.collapse-indicator::before,
+h6:hover div.heading-collapse-indicator.collapse-indicator::before 
+{
+  opacity: 1;
+}
+
+/*QUOTE BLOCK PREVIEW*/
+.markdown-preview-view blockquote 
+{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 8px;
+  border-right-width:0; 
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 9px;
+  border-color: var(--Orange);
+  background-color: var(--LighterGrey);
+  border-radius: 8px;
+  margin-inline-start: 10%;
+  margin-inline-end: 10%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 5px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+/*QUOTE BLOCK HOVER PREVIEW*/
+.markdown-preview-view blockquote:hover
+{
+    border-color: var(--Blue);
+    border-radius: 8px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translate3d(0px, -3px, 0px);
+}
+
+/*CHECKMARK PREVIEW*/
+.markdown-preview-view .task-list-item-checkbox 
+{
+   -webkit-appearance: none;
+   box-sizing: border-box;
+   border: 1px solid var(--text-normal);
+   position: relative;
+   width: 16px;
+   height: 16px;
+   margin: 0px 7px 2px 0;
+   filter: hue-rotate(var(--theme-color));
+   transition: all 500ms;
+   cursor: pointer;
+   left: 1px;
+}
+/*CHECKMARK BOX CHECKED PREVIEW*/
+.markdown-preview-view .task-list-item-checkbox:checked 
+{
+   border: none;
+   background-color: var(--Orange);
+}
+/*CHECKMARK BOX CHECKED HOVER PREVIEW*/
+.markdown-preview-view .task-list-item-checkbox:checked:hover 
+{
+    background-color: var(--Blue);
+}
+/*CHECKMARK BOX UNCHECKED PREVIEW*/
+.markdown-preview-view .task-list-item-checkbox:checked::before {
+   content: ' ';
+   position: absolute;
+   background-color: white;
+   left: 3px;
+   top: 3px;
+   right: 2px;
+   bottom: 2px;
+   transform: scale(1.1);
+   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpolygon points='5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+/*EMBED PREVIEW*/
+.internal-embed .markdown-embed
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-right-width:0; 
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 10px;
+    border-color: var(--Orange);
+    background-color: var(--LighterGrey);
+    border-radius: 8px;
+    margin-inline-start: 0%;
+    margin-inline-end: 10%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 5px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/*CENTRE IMAGE PREVIEW*/
+span img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*IMAGE MOUSE HOVER PREVIEW*/
+.workspace-leaf-content[data-type="markdown"] .view-content  img:not([class="emoji"]) 
+{
+    cursor: zoom-in;
+    padding: 5px;
+    display: block;
+}
+/*IMAGE IMAGE ZOOM PREVIEW*/
+.view-content img:not([class="emoji"]):active 
+{
+    cursor: zoom-out !important;    
+    position: fixed;
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    height:100%;
+    width: 100%;
+    margin: 1px auto 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+}
+/*EMBED HOVER PREVIEW*/
+.internal-embed .markdown-embed:hover 
+{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translate3d(0px, -3px, 0px);
+    border-color: var(--Blue);
+}
+
+/*CODE BLOCK PREVIEW*/
+.markdown-preview-section code
+{
+    color: var(--Black) !important;
+    font-size: 1em;
+}
+
+/*INTERNAL LINKS PREVIEW*/
+a,
+.markdown-preview-view .internal-link 
+{
+  text-decoration: none;
+  color: var(--Orange);
+}
+
+/*INTERNAL LINKS HOVER PREVIEW*/
+.internal-link:hover
+{
+    color: var(--Blue);
+    background-color:var(--LighterBlue);
+}
+
+/* EXTERNAL LINK PREVIEW*/
+.external-link
+{
+    color:var(--Orange);
+    text-decoration: underline;
+}
+/*EXTERNAL LINK HOVER PREVIEW*/
+.external-link:hover
+{
+    color:var(--Blue);
+    background-color: #CDE4FF;
+}
+
+/*FOOTNOTE HOVER PREVIEW*/
+.footnote-link:hover
+{
+    color: var(--Orange);
+    background-color:#FFE8CD ;
+}
+/*FOOTNOTE PREVIEW*/
+a,
+.footnote.link
+{
+    color: var(--Blue)
+}
+
+.footnotes
+{}
+
+/*TABLE HOVER PREVIEW*/
+.markdown-preview-view td:hover
+{
+    background-color: var(--Orange);
+}
+
+/*TABLE INACTIVE HOVER PREVIEW*/
+.markdown-preview-view tr:hover
+{
+    background-color: var(--LightOrange);
+}
+
+/*TABLE HEADERS PREVIEW*/
+.markdown-preview-view th
+{
+    background-color: var(--LightOrange);
+}
+
+/*BULLET LIST COLLAPSE ARROW PREVIEW*/
+.markdown-preview-view .list-collapse-indicator.collapse-indicator.collapse-icon::before 
+{
+    content : "↓";
+    font-size: 14px;
+    margin-left: -5px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: var(--text-accent);
+    transition: transform 10ms linear 0s;
+}
+
+/*BULLET LIST HIDE ICON PREVIEW*/
+.markdown-preview-view .list-collapse-indicator.collapse-indicator.collapse-icon svg 
+{
+    display: none;
+    color: var(--accent-strong);
+    height: 7px;
+    width: 7px;
+}
+
+/*BULLET LIST ARROW TURN PREVIEW*/
+.markdown-preview-view li.is-collapsed div.list-collapse-indicator.collapse-indicator.collapse-icon 
+{
+    transform: translateX(-3px) translateY(-2px) rotate(-90deg);
+    opacity: 0.5;
+}
+
+/*..........EDITOR..........*/
+
+/*ACTIVE CURSER LINE EDIT*/
+.CodeMirror-activeline
+{
+    background-color: var(--LighterBlue);
+}
+
+/*PAGE EDIT*/
+.CodeMirror-lines
+{
+    background-color: var(--white);
+}
+
+/*HEADER ARROW LOCATION EDIT*/
+div.CodeMirror-foldgutter-open 
+{
+    left: 5px;
+    position: absolute;
+    transition: transform 20ms linear 0s;
+}
+/*HEADER ARROW EDIT*/
+div.CodeMirror-foldgutter-open::after 
+{
+  content : "↓";
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Inter';
+  margin-left: -4px;
+  top: -1px;
+  color: var(--Blue);
+  transition: transform 10ms linear 0s;
+}
+/*HEADER FOLDED ARROW EDIT*/
+div.CodeMirror-foldgutter-folded 
+{ 
+   position: absolute;
+   transition: transform 20ms linear 0s;
+}
+/*HEADER COLLAPSED EDIT*/
+div.CodeMirror-foldgutter-folded::after 
+{
+  content : "→";
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Inter';
+  margin-left: 1px;
+  top: -1px;
+  color: var(--Blue);
+  opacity: 0.5;
+  transition: transform 10ms linear 0s;
+}
+
+.HyperMD-codeblock-end .CodeMirror-line
+{
+    background-color: var(--white);
+}
+
+/*PAGE SIDEBAR EDIT*/
+.CodeMirror-vscrollbar
+{
+    background-color: var(--white);
+    border: 0px
+}
+
+/*QUOTE BLOCK HIDE > EDIT*/
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-quote 
+{
+    color: transparent !important;
+}
+/*QUOTE BLOCK LOOK EDIT*/
+div:not(.CodeMirror-activeline) > .HyperMD-quote 
+{
+    border-left: 7px solid var(--Orange);
+    border-radius: 6px;
+    background-color: var(--LighterGrey);
+}
+/*QUOTE BLOCK WHEN EDITING LOOK EDIT*/
+div.CodeMirror-activeline > .HyperMD-quote 
+{
+    border-left: 7px solid var(--Orange);
+    border-radius: 6px;
+}
+/*QUOTE BLOCK WHEN EDIT*/
+.cm-quote:not([class*="link"]):not([class*="string"]) 
+{
+    color: var(--Black);
+}
+
+/*PAGE TOGGLE LINE (GOES DOWN BY THE BULLETS)*/
+.CodeMirror-gutter.CodeMirror-foldgutter
+{
+    background-color: transparent;
+}
+
+/*CHECKMARK ACTIVE EDIT*/
+span.cm-formatting-task.cm-property 
+{
+   color: var(--Blue);
+} 
+
+/*CHECKMARK POSITIONING EDIT*/
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-task.cm-meta,
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-task.cm-property 
+{
+   color: transparent;
+   position: relative;
+}
+/*CHECKMARK UNCHECKED EDIT*/
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-task.cm-meta:after,
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-task.cm-property:after 
+{
+   content: "☐";
+   position: absolute;
+   top: 3px;
+   left: 6px;
+   color: var(--text-normal);
+   font-size: 1.3em;
+   font-family: Arial, serif;
+}
+/*CHECKMARK CHECKED EDIT*/
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-task.cm-property:after 
+{
+   content: "☑";
+   color: var(--Orange) !important;
+}
+
+/*PAGE TOGGLE EDIT*/
+.markdown-source-view
+{
+    background-color: var(--white)
+}
+
+/*EXTERNAL LINKS EDIT*/
+.cm-url
+{
+    color: var(--Orange)!important;
+}
+
+/*INTERNAL LINK EDIT*/
+.cm-hmd-internal-link
+{
+    color:var(--Orange)!important; 
+    text-decoration: none;
+}
+
+/*PAGE CONTENT EDIT*/
+.view-content
+{
+    background-color: var(--white);
+    color: var(--Black)
+}
+/*..........WORKSPACE..........*/
+
+/*OBSIDIAN VAULT AND VERSION*/
+.titlebar-text
+{
+    color:var(--Orange);
+    font-weight: bold;
+}
+/*BACK FORWARD MINIMIZE MAXIMIZE AND EXIT*/
+.titlebar-button
+{
+    color:var(--Orange);
+    transform: scale(1.2);
+}
+/*BACK FORWARD MINIMIZE MAXIMIZE AND EXIT HOVER*/
+.titlebar-button.mod-maximize:hover, 
+.titlebar-button.mod-minimize:hover,
+.workspace-ribbon-collapse-btn:hover,
+.titlebar-button.mod-back:hover,
+.titlebar-button.mod-forward:hover,
+.workspace-tab-header.is-active:hover
+{
+  color: var(--Blue);
+  transform: scale(1.4);
+}
+
+/*TOP BAR*/
+.titlebar
+{
+    background-color: var(--white);
+    text-align: right
+}
+
+
+/*ACTIVE PAGE HEADER*/
+.workspace-leaf.mod-active .view-header
+{
+    background: linear-gradient(90deg, rgb(255, 136, 0) 0%, rgb(255, 255, 255) 15%)!important;
+    border: 0px;
+    text-align: center;
+    border-bottom-width: 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 5px 5px rgba(0,0,0,0.1);
+}
+
+/*ACTIVE PAGE HEADER CONTAINER*/
+.workspace-leaf.mod-active .view-header-title-container::after
+{
+    background: var(--white);
+}
+/*ACTIVE LONG PAGE CONTAINER*/
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after 
+{
+    background: var(--white)
+}
+
+/*INACTIVE PAGE HEADER*/
+.view-header
+{
+    background: var(--white);
+    border: 0px;
+    text-align: center;
+    border-bottom-width: 0;
+    border-color: var(--Orange);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 5px 5px rgba(0,0,0,0.1);
+}
+
+/*INACTIVE PAGE HEADER SECTION*/
+.view-header-title-container::after
+{
+    background: transparent
+}
+
+/*PAGE EDIT OPTION EXIT LOCATION*/
+.view-action 
+{
+   top: 1px;
+   margin: 5px 10px 0px 0px;
+   order: 3;
+   padding: 10;
+}
+/*PIN ICON LOCATION*/
+.view-action[aria-label='Pin'] 
+{
+    padding-top: 1px;
+    order: 2;
+}
+/*CLOSE ICON LOCATION*/
+.view-action[aria-label='Close'] 
+{
+    order: 4;
+}
+/*UNLINK ICON LOCATION*/
+.view-action[aria-label='Unlink pane'] 
+{
+    padding-top: 2px;
+    order: 1;
+    color: var(--Blue);
+}
+/*ICON LOCATION*/
+.view-action > svg.cross,
+.view-action > svg.vertical-three-dots,
+.view-action > svg.pencil,
+.view-action > svg.lines-of-text 
+{
+    width: 12px;
+    height: 10px;
+    padding: 6px;
+    border-radius: 100px;
+}
+
+/*PAGE CROSS ICON*/
+.view-action > svg.cross 
+{  
+    background-color: var(--Orange);
+}
+/*PAGE OPTION ICON*/
+.view-action > svg.vertical-three-dots 
+{
+    background-color: var(--Orange);
+}
+/*PAGE EDIT ICON*/
+.view-action > svg.pencil 
+{
+    background-color: var(--Orange);
+}
+/*PAGE PREVIEW ICON*/
+.view-action > svg.lines-of-text 
+{
+    background-color: var(--Orange);
+}
+/*PAGE PIN ICON*/
+.view-action > svg.filled-pin 
+{
+    padding: 1px;
+    color: var(--Blue) !important; 
+    opacity: 0.8;
+}
+/*PAGE LINK ICON*/
+.view-action > svg.broken-link 
+{
+    padding: 0px;
+    color: var(--Blue) !important; 
+    opacity: 0.8; 
+}
+/*PAGE ICON LOCATIONS*/
+.view-action:hover > svg.cross,
+.view-action:hover > svg.vertical-three-dots,
+.view-action:hover > svg.pencil,
+.view-action:hover > svg.lines-of-text 
+{
+    width: 30px;
+    height: 30px;
+    padding: 2.5px;
+    border-radius: 100px;
+    color: var(--white);
+    transition: width, height 0.2s;
+}
+
+/*ACTIVE PLUGIN TAB*/
+.nav-action-button.is-active /* Active button */
+{
+    background-color: var(--Orange);
+    color: white
+}
+
+/*INACTIVE PLUGIN TABS*/
+.nav-action-button 
+{
+    background-color: var(--LightOrange);
+    color:white 
+}
+
+/*PLUGIN ICON HOVER*/
+.workspace-tab-header:hover 
+{
+    color: var(--Blue);
+}
+
+/*HORIZONTAL SEPORATOR LINES BETWEEN PLUGIN PANELS*/
+.workspace-leaf-resize-handle
+{
+    background-color: var(--white)
+}
+
+/*PLUGIN OPTION TAB HOVER*/
+.nav-action-button:hover 
+{
+    background-color: var(--Blue);
+    color: white
+}
+
+/*PLUGIN TAB ICONS BAR BEFORE*/
+.workspace-tab-container-before.is-before-active
+.workspace-tab-header-inner
+{
+    background-color: var(--white)
+}
+/*PLUGIN TAB ICONS BAR AFTER*/
+.workspace-tab-container-after.is-after-active
+.workspace-tab-header-inner
+{
+    background-color: var(--white)
+}
+/*PLUGIN TAB ICON CONTAINER*/
+.workspace-tab-header-container
+{
+    background-color: var(--white) ;
+}
+/*PLUGIN TAB ICON CONTAINER BEFORE*/
+.workspace-tab-container-before
+{
+    background-color: var(--white);
+}
+/*PLUGIN TAB ICON CONTAINER AFTER*/
+.workspace-tab-container-after
+{
+    background-color: var(--white);
+}
+
+/*INACTIVE PLUGIN TAB*/
+.workspace-tab-container-inner
+{
+    background-color: var(--LightOrange);
+}
+
+/*PLUGIN TAB BEFORE ACTIVE*/
+.workspace-tab-header.is-before-active
+{
+    background-color: var(--Orange)
+}
+/*PLUGIN TAB BEFORE INNER ACTIVE*/
+.workspace-tab-header.is-before-active
+.workspace-tab-header-inner
+{
+    background-color: var(--LightOrange); 
+}
+
+/*GRAPH VIEW NODE FILL*/
+.graph-view.color-fill
+{
+    color: rgb(187, 85, 187)
+}
+/*GRAPH VIEW INTERACTION*/
+.graph-view.color-circle,
+.graph-view.color-fill-highlight,
+.graph-view.color-line-highlight
+{
+    color: var(--Orange) !important;
+}
+
+/*ACTIVE PLUGIN TAB*/
+.workspace-tab-header.is-active
+.workspace-tab-header-inner /* After active tab*/
+{
+    background-color: var(--Orange);
+}
+
+/*AFTER ACTIVE TAB CURVE*/
+.workspace-tab-header.is-after-active
+{
+    background-color: var(--Orange) 
+}
+
+/*AFTER ACTIVE TAB*/
+.workspace-tab-header.is-after-active
+.workspace-tab-header-inner
+{
+    background-color: var(--LightOrange);
+}
+
+/*PLUGIN ICON TAB AFTER ACTIVE*/
+.workspace-tab-header.is-after-active
+.workspace-tab-header-inner
+.workspace-tab-header-inner-icon /*ICON: After active */ 
+{
+    color:white
+}
+
+/*SIDE RIBBONS*/
+.workspace-ribbon
+{
+    background-color:white ;
+    border:white
+}
+
+/*LEFT SIDE RIBBONS COLLAPSED*/
+.workspace-ribbon.side-dock-ribbon.mod-left.is-collapsed
+{
+    background-color: white
+}
+
+/*RIGHT SIDE RIBBONS COLLAPSED*/
+.workspace-ribbon.workspace-ribbon.side-dock-ribbon.mod-right.is-collapsed
+{
+    background-color: white
+}
+
+/*LEFT SIDE ACTIONS*/
+.side-dock-ribbon-action
+{
+    background-color: var(--Orange); 
+    color: white;
+}
+
+/*LEFT SIDE ACTION HOVER*/
+.side-dock-ribbon-action:hover
+{
+    background-color: var(--Blue);
+    color: white
+}
+
+/*SIDE ACTION COLLAPSE ARROWS*/
+.workspace-ribbon-collapse-btn
+{
+    background-color:var(--blue);
+    color:var(--Orange);
+}
+
+/*SIDE ACTION ARROW ICON*/
+.workspace-ribbon-collapse-btn>svg
+{
+    stroke-width: 10;
+}
+
+/*LEFT PLUGIN ACTION HEADERS*/
+.workspace-leaf-content
+{
+    background-color: white;
+    color: white;
+}
+
+/*BOTTOM STATUS BAR*/
+.status-bar 
+{
+    --bar-vertical-padding: 4px;
+    --bar-height: calc(22px + (5px));
+    line-height: 1;
+    padding: 0 10px;
+    height: var(5px);
+    max-height: 5px;
+    min-height: var(--bar-height);
+    overflow: hidden;
+    color: var(--text-muted);
+    background-color: var(--background-primary);
+}
+/*BOTTOM STATUS BAR ICONS*/
+.status-bar-item 
+{
+    margin: auto 0;
+}
+/*STAUS BAR ICON LOCATION*/
+.status-bar-item > * 
+{
+    padding-top: var(--bar-vertical-padding) !important;
+    padding-bottom: var(--bar-vertical-padding) !important;
+}
+
+/*..........PLUGINS..........*/
+/*..........FILE EXPLORER..........*/
+
+/*FILE EXPLORER HIDE ICONS*/
+.nav-folder-collapse-indicator svg 
+{
+    display: none;
+    color: var(--accent-strong);
+    height: 7px;
+    width: 7px;
+}
+
+/*FOLDER TITLE*/
+.nav-folder-title-content /* Folder Sidebar content */
+{
+    background-color: var(--LightOrange);
+    color: var(--white);
+}
+
+/*..........PAGE PREVIEW..........*/
+
+/*PAGE PREVIEW PLUGIN*/
+.popover.hover-popover 
+{
+    position: absolute;
+    min-height: 350px;
+    width: 600px;
+    overflow: overlay;      
+    padding: 0;
+    box-shadow: 0px 0px 3px 3px var(--Orange);
+}
+
+/*..........SEARCH..........*/
+
+/*SEARCH RESULT ARROW*/
+.workspace-leaf .search-result-container.mod-global-search .tree-item-self.search-result-file-title.is-clickable .collapse-icon::before 
+{
+    content : "↓";
+    font-size: 14px;
+    margin-left: 0px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: var(--Blue);
+    transition: transform 10ms linear 0s;
+}
+/*SEARCH RESULT HIDE ICON*/
+.workspace-leaf .search-result-container.mod-global-search .tree-item-self.search-result-file-title.is-clickable .collapse-icon svg 
+{
+    display: none;
+    color:var(--accent-strong);
+    height:7px;
+    width:7px;
+}
+/*SEARCH RESULT ARROW ROTATION*/
+.workspace-leaf .search-result-container.mod-global-search .tree-item.search-result.is-collapsed .collapse-icon 
+{
+    transform: translateX(1px) translateY(1px) rotate(-90deg);
+    opacity: 0.5;
+}
+
+/*SEARCH PLUGIN*/
+.suggestion-item.is-selected
+{
+    background-color:var(--Orange);
+    color: var(--white)
+}
+
+/*SEARCH BAR EXIT*/
+.search-input-clear-button /* Search Bar exit button */
+{
+   color: var(--Orange)
+}
+/*SEARCH BAR EXIT HOVER*/
+.search-input-clear-button:hover
+{
+    color:var(--Blue)
+}
+
+/*SEARCH RESULT NUMBER HOVER*/
+.tree-item-self.is-clickable:hover
+.tree-item-flair 
+{
+    background-color: var(--Blue)
+}
+
+/*SEARCH RESULT NUMBER*/
+.tree-item-flair /* Item Number display */
+{
+    background-color: var(--LightOrange);
+    color: var(--white)
+}
+
+/*EXPANDED SEARCH RESULT*/
+.search-result-file-match
+{
+    color:var(--Black)
+}
+/*EXPANDED SEARCH RESULT HOVER*/
+.search-result-file-match:hover 
+{
+    background-color: var(--LighterGrey)
+}
+
+/*..........BACKLINKS..........*/
+
+/*BACKLINK ARROW ICONS*/
+.backlink-pane .search-result-container .collapse-icon {
+    left: 0px;
+    top: 7px;
+    margin-top: 0px;
+    transition: transform 20ms linear 0s;
+}
+
+/*BACKLINK ARROW*/
+.backlink-pane .search-result-container .collapse-icon::before 
+{
+    content : "↓";
+    font-size: 14px;
+    font-family: 'Inter';
+    font-weight: bold;
+    color: var(--Blue);
+    transition: transform 10ms linear 0s;
+}
+
+/*BACKLINK HIDE ICONS*/
+.backlink-pane .search-result-container .collapse-icon svg 
+{
+    display: none;
+    color:var(--Blue);
+    height:7px;
+    width:7px;
+}
+
+/*BACKLINK ARROW ROTATION*/
+.backlink-pane .search-result-container .tree-item.search-result.is-collapsed .collapse-icon 
+{
+    transform: translateX(1px) translateY(1px) rotate(-90deg);
+    opacity: 0.5;
+}
+/*BACKLINK SECTION ARROW*/
+.tree-item-icon
+{
+    color:var(--LightOrange)
+}
+
+/*..........OUTLINE..........*/
+
+/*OUTLINE PADDING*/
+.outline .tree-item-self.is-clickable 
+{
+    padding-left: 27px !important;
+}
+/*OUTLINE LOCATION*/
+.outline .tree-item .collapse-icon 
+{
+    padding: 0px;
+    transition: transform 20ms linear 0s;
+}
+/*OUTLINE HEADING ARROW*/
+.outline .tree-item .collapse-icon::before 
+{
+    content : "↓";
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: var(--text-accent);
+    transition: transform 10ms linear 0s;
+}
+
+/*OUTLINE HEADING HIDE ICON*/
+.outline .tree-item .collapse-icon svg 
+{
+    display: none;
+    color: var(--accent-strong);
+    height: 7px;
+    width: 7px;
+}
+
+/*OUTLINE COLLAPSED LOCATION */
+.outline .tree-item.is-collapsed .collapse-icon 
+{
+    transform: translateX(-1px) translateY(-1px) rotate(-90deg);
+    opacity: 0.5;
+}
+  
+/*OUTLINE VERTICAL CONNECTION LINES*/
+.outline .tree-item-children 
+{
+    margin-left: 14px;
+    border-left: 2px solid rgba(148, 148, 148, 0.2);
+    border-radius: 0px;
+    transition:all 300ms ease-in-out;
+}
+/*OUTLINE LINE HOVER COLOUR*/
+.outline .tree-item-children:hover 
+{
+    border-left-color: var(--Blue);
+}
+
+/*..........CALENDAR PLUGIN..........*/ 
+
+#calendar-container {
+    --color-background-heading: white /*HEADING*/
+    --color-background-weeknum: var(--white); /*WEEK NUMBER*/
+    --color-background-weekend: var(--LightOrange); /*WEEKEND*/
+    --color-dot: var(--Blue); /*DOT COLOURS*/
+    --color-arrow: var(--Orange); /*MONTH ARROWS*/
+    --color-text-title: grey ; /*MONTH HEADER*/
+    --color-text-heading: grey; /*WEEK HEADER*/
+    --color-text-day: var(--Black); /*DAY NUMBER*/
+    --color-text-today: var(--Blue); /*ACTIVE DAY NUMBER*/
+    --color-text-weeknum: var(--Black); /* Week Number */
+}
+  
+/*CALENDAR PLUGIN ACTIVE DAY*/
+.day.has-note.active.svelte-q3wqg9
+{
+    background-color: var(--LightBlue);
+}
+  
+/*CALENDAR PLUGIN ACTIVE DAY HOVER*/
+.day.has-note.active.svelte-q3wqg9:hover 
+{
+    background-color: var(--Blue);
+}
+  
+/*CALENDAR PLUGIN YEAR*/
+.title.svelte-1vwr9dd .year.svelte-1vwr9dd
+{
+    color:var(--Orange)
+}
+
+
+
+
+
+
+
+
+

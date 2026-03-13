@@ -1036,12 +1036,12 @@ for (const t of themes) {
 const pkg = {
   name: "mvp-scale-themes",
   displayName: "MVP Scale - Startup & Vibe Coding Themes",
-  description: "10 dark themes inspired by the startup founder journey. From Seed Round to Exit Strategy.",
-  version: "1.0.0",
+  description: "10 dark themes that follow the startup founder journey — from Seed Round to Exit Strategy. Pitch-black terminals, theme-aware Mermaid diagrams, and vibes that scale.",
+  version: "1.1.0",
   publisher: "mvp-scale",
   engines: { vscode: "^1.70.0" },
   categories: ["Themes"],
-  keywords: ["dark theme", "startup", "vibe coding", "founder", "mvp", "deploy"],
+  keywords: ["dark theme", "startup", "vibe coding", "founder", "mvp", "deploy", "mermaid", "markdown", "cursor"],
   contributes: {
     themes: themes.map(t => ({
       label: t.label,

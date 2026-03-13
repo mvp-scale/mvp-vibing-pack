@@ -1,0 +1,23 @@
+body {
+  --background-primary-alt: rgba(26, 26, 26, 0.8) !important;
+}
+
+.mermaid .cluster rect {
+  stroke: #fb8500 !important;
+  stroke-width: 2px;
+}
+
+.mermaid .cluster text {
+  fill: #ffffff !important;
+  font-weight: bold;
+}
+
+
+.mermaid .edgePath path {
+  stroke: #ffb703 !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .label text {
+  fill: #ffffff !important;
+}

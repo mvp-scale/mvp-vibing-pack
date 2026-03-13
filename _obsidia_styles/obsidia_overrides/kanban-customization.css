@@ -1,0 +1,4 @@
+/* Adjusts font size in Kanban boards */
+.kanban-board {
+    font-size: 10px; /* Change the size as needed */
+}

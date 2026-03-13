@@ -1,0 +1,39 @@
+:root
+{
+    --Orange: #ff8800;
+    --LightOrange: #ffc480;
+    --Blue: #0077ff;
+    --Black: #131515;
+    --DarkGrey:#373737;
+    --LightBlue: #9AC9FF;
+    --LighterBlue: #CDE4FF;
+    --white: #ffffff;
+    --LighterGrey: #f0f0f0;
+}
+.theme-light
+{
+    --interactive-accent:         var(--Orange);
+    --text-accent:                var(--Orange);
+    --text-accent-hover:          var(--Blue);
+    --interactive-accent-hover:   var(--Blue);
+    --text-highlight-bg:          var(--LightBlue);
+    --text-on-accent:             var(--white);
+}
+.theme-dark
+{
+    --interactive-accent:         var(--Orange);
+    --text-accent:                var(--Orange);
+    --text-accent-hover:          var(--Blue);
+    --interactive-accent-hover:   var(--Blue);
+    --text-highlight-bg:          var(--LightBlue);
+    --text-on-accent:             var(--white);
+}
+
+.popover.hover-popover 
+{
+    position: absolute;
+    min-height: 350px;
+    width: 600px;
+    overflow: overlay;      
+    padding: 0;
+}
