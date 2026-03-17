@@ -259,66 +259,69 @@
 
 /* ============================================
    GANTT CHART
-   Done tasks use border color (not bg-secondary)
-   so they don't blend into section backgrounds.
-   All text forced light via broad SVG selectors.
+   Every background is paired with its text color.
+   No orphan fills — if we set a bg, we set its text.
    ============================================ */
+
+/* Section bands: dark bg → light text */
 .mermaid .section0, .mermaid .section2 {
   fill: var(--mpe-bg-secondary) !important;
 }
-
 .mermaid .section1, .mermaid .section3 {
   fill: var(--mpe-cluster-fill) !important;
 }
 
-.mermaid .task {
-  fill: var(--mpe-accent) !important;
-  stroke: var(--mpe-border) !important;
-}
-
+/* Default tasks: node-fill bg → light text */
+.mermaid .task,
 .mermaid .task0, .mermaid .task1,
 .mermaid .task2, .mermaid .task3 {
   fill: var(--mpe-node-fill) !important;
   stroke: var(--mpe-node-stroke) !important;
 }
 
+/* Active tasks: accent bg → accent-text */
 .mermaid .active0, .mermaid .active1,
 .mermaid .active2, .mermaid .active3 {
   fill: var(--mpe-accent) !important;
   stroke: var(--mpe-border) !important;
 }
 
-/* Done tasks - use border color so they contrast with section bg */
+/* Done tasks: text-muted bg → light text */
 .mermaid .done0, .mermaid .done1,
 .mermaid .done2, .mermaid .done3 {
-  fill: var(--mpe-border) !important;
-  stroke: var(--mpe-text-muted) !important;
+  fill: var(--mpe-text-muted) !important;
+  stroke: var(--mpe-border) !important;
 }
 
-/* Gantt text - broad SVG text override to catch all variants
-   including section titles that may not have specific classes */
+/* ALL gantt text — force light on every text element in the chart.
+   Uses the broadest possible selectors to beat Mermaid's inline styles. */
 .mermaid .taskText,
 .mermaid .taskTextOutsideRight,
 .mermaid .taskTextOutsideLeft,
 .mermaid .taskText0, .mermaid .taskText1,
-.mermaid .taskText2, .mermaid .taskText3,
-.mermaid .activeText0, .mermaid .activeText1,
-.mermaid .activeText2, .mermaid .activeText3,
-.mermaid .doneText0, .mermaid .doneText1,
-.mermaid .doneText2, .mermaid .doneText3 {
+.mermaid .taskText2, .mermaid .taskText3 {
   fill: var(--mpe-text) !important;
   color: var(--mpe-text) !important;
-  font-size: 12px !important;
 }
 
-/* Section titles - multiple selector strategies */
+/* Active task text: dark on accent bg */
+.mermaid .activeText0, .mermaid .activeText1,
+.mermaid .activeText2, .mermaid .activeText3 {
+  fill: var(--mpe-accent-text) !important;
+  color: var(--mpe-accent-text) !important;
+}
+
+/* Done task text: dark on muted bg */
+.mermaid .doneText0, .mermaid .doneText1,
+.mermaid .doneText2, .mermaid .doneText3 {
+  fill: var(--mpe-bg-deep) !important;
+  color: var(--mpe-bg-deep) !important;
+}
+
+/* Section titles */
 .mermaid .sectionTitle,
 .mermaid .sectionTitle0, .mermaid .sectionTitle1,
 .mermaid .sectionTitle2, .mermaid .sectionTitle3,
-.mermaid .section-title,
-.mermaid .section-title-0, .mermaid .section-title-1,
-.mermaid .section-title-2, .mermaid .section-title-3,
-.mermaid text.sectionTitle,
 .mermaid text[class*="sectionTitle"],
 .mermaid text[class*="section-title"] {
   fill: var(--mpe-text) !important;
@@ -326,9 +329,15 @@
   font-weight: bold !important;
 }
 
-/* Nuclear option: all text inside a gantt SVG */
-.mermaid[data-processed="true"] text {
+/* Fallback: any text inside a gantt that we missed */
+.mermaid svg text {
   fill: var(--mpe-text) !important;
+}
+
+/* Grid tick text — slightly muted so it doesn't compete */
+.mermaid .grid .tick text,
+.mermaid .tick text {
+  fill: var(--mpe-text-muted) !important;
 }
 
 .mermaid .today {
@@ -342,14 +351,10 @@
   stroke: var(--mpe-node-stroke) !important;
 }
 
-/* Gantt grid */
+/* Gantt grid lines */
 .mermaid .grid .tick line {
   stroke: var(--mpe-border) !important;
   opacity: 0.5 !important;
-}
-
-.mermaid .grid .tick text {
-  fill: var(--mpe-text-muted) !important;
 }
 
 /* ============================================
